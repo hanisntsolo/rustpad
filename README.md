@@ -92,6 +92,25 @@ following environment variables on startup:
   [env_logger](https://docs.rs/env_logger/#enabling-logging) docs for more
   information.
 
+## Run a docker compose
+```yml
+version: '3.8'
+
+services:
+  rustpad:
+    image: ekzhang/rustpad:latest
+    container_name: rustpad
+    restart: always
+    ports:
+      - "3030:3030"
+    volumes:
+      - "/media/hanisntsolo/WDBlue_ssd_hanis/docker/volumes/jupyter/notebooks/jupyter-lab/rustpad_db/:/persist"
+    environment:
+      - EXPIRY_DAYS=365
+      - PORT=3030
+      - RUST_LOG=OFF #TRACE,OFF,error,warn,info,debug
+      - SQLITE_URI=sqlite:///persist/rustpad.db
+```
 ## Deployment
 
 Rustpad is distributed as a single 6 MB Docker image, which is built
@@ -100,7 +119,7 @@ version of this image from Docker Hub. It has multi-platform support for
 `linux/amd64` and `linux/arm64`.
 
 ```
-docker pull ekzhang/rustpad
+docker pull hanisntsolo/rustpad
 ```
 
 (You can also manually build this image with `docker build -t rustpad .` in the
@@ -108,7 +127,7 @@ project root directory.) To run locally, execute the following command, then
 open `http://localhost:3030` in your browser.
 
 ```
-docker run --rm -dp 3030:3030 ekzhang/rustpad
+docker run --rm -dp 3030:3030 hanisntsolo/rustpad
 ```
 
 We deploy a public instance of this image using [Fly.io](https://fly.io/).
