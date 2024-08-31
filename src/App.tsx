@@ -50,9 +50,7 @@ function generateName() {
 function generateHue() {
   return Math.floor(Math.random() * 360);
 }
-function toggleCollapse() {
-  setIsCollapsed(!isCollapsed);
-}
+
 function App() {
   const toast = useToast();
   const [isCollapsed, setIsCollapsed] = useState(false);
@@ -162,7 +160,9 @@ function App() {
   function handleDarkMode() {
     setDarkMode(!darkMode);
   }
-
+  function toggleCollapse() {
+    setIsCollapsed(!isCollapsed);
+  }
   return (
     <Flex
       direction="column"
@@ -179,7 +179,7 @@ function App() {
         fontSize="sm"
         py={0.5}
       >
-        WoahAI - CoCode
+        Hanisntsolo - Rustpad
       </Box>
       <Flex flex="1 0" minH={0}>
         {!isCollapsed && (

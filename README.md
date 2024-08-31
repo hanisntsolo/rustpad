@@ -10,9 +10,9 @@ collaborate in real time while writing code in their browser. Rustpad is
 completely self-hosted and fits in a tiny Docker image, no database required.
 
 <p align="center">
-<a href="https://rustpad.io/">
+<a href="https://rp.hanisntsolo.com/">
 <img src="https://i.imgur.com/WjU5UrP.png" width="800"><br>
-<strong>rustpad.io</strong>
+<strong>rp.hanisntsolo.com</strong>
 </a>
 </p>
 
