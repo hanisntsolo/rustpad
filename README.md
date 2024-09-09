@@ -98,7 +98,7 @@ version: '3.8'
 
 services:
   rustpad:
-    image: ekzhang/rustpad:latest
+    image: hanisntsolo/rustpad:latest
     container_name: rustpad
     restart: always
     ports:
